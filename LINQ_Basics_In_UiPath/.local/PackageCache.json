@@ -199,6 +199,14 @@
         "C:\\Users\\fasulu\\.nuget\\packages\\uipath.vision\\3.3.0\\lib/net461/UiPath.Vision.dll"
       ],
       "Path": "C:\\Users\\fasulu\\.nuget\\packages\\uipath.uiautomation.activities\\22.4.5"
+    },
+    {
+      "Package": {
+        "Id": "System.Xml.XDocument",
+        "Version": "4.3.0"
+      },
+      "Assemblies": [],
+      "Path": "C:\\Users\\fasulu\\.nuget\\packages\\system.xml.xdocument\\4.3.0"
     }
   ],
   "Conflicts": [],
@@ -1148,6 +1156,11 @@
     "System.ValueTuple": {
       "Id": "System.ValueTuple",
       "Version": "4.5.0",
+      "Dependencies": []
+    },
+    "System.Xml.XDocument": {
+      "Id": "System.Xml.XDocument",
+      "Version": "4.3.0",
       "Dependencies": []
     },
     "UiPath": {
@@ -2356,6 +2369,16 @@
         "C:\\Users\\fasulu\\.nuget\\packages\\system.valuetuple\\4.5.0\\lib\\net461\\System.ValueTuple.dll"
       ],
       "Path": "C:\\Users\\fasulu\\.nuget\\packages\\system.valuetuple\\4.5.0"
+    },
+    {
+      "Package": {
+        "Id": "System.Xml.XDocument",
+        "Version": "4.3.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\fasulu\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\lib\\net45\\_._"
+      ],
+      "Path": "C:\\Users\\fasulu\\.nuget\\packages\\system.xml.xdocument\\4.3.0"
     },
     {
       "Package": {

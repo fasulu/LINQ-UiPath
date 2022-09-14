@@ -1,8 +1,9 @@
 {
   "name": "LINQ_Basics_In_UiPath",
-  "description": "LINQ tutorial",
-  "main": "Main.xaml",
+  "description": "LINQ tutorial on Extract values from xml document, Converting extracted value to an input dialog combo box, Group, Order and Join",
+  "main": "Join-Linq.xaml",
   "dependencies": {
+    "System.Xml.XDocument": "[4.3.0]",
     "UiPath.Excel.Activities": "[2.12.3]",
     "UiPath.Mail.Activities": "[1.15.2]",
     "UiPath.System.Activities": "[22.4.1]",
@@ -45,8 +46,26 @@
   "expressionLanguage": "VisualBasic",
   "entryPoints": [
     {
-      "filePath": "Main.xaml",
-      "uniqueId": "1a83c8db-af5e-49c0-b354-aeeccbfe966d",
+      "filePath": "Main - Linq.xaml",
+      "uniqueId": "b0164508-846f-43ad-be81-d3aa2dab2319",
+      "input": [],
+      "output": []
+    },
+    {
+      "filePath": "Extract-Names-From-XMLDocument-Linq.xaml",
+      "uniqueId": "90cc8ed2-93b4-4689-b2cc-aed7cb279e2c",
+      "input": [],
+      "output": []
+    },
+    {
+      "filePath": "Group-and-Order-Linq.xaml",
+      "uniqueId": "8a2e1e28-c0b7-4f5b-95da-3cc35972170b",
+      "input": [],
+      "output": []
+    },
+    {
+      "filePath": "Join-Linq.xaml",
+      "uniqueId": "1aa21ab9-eefc-4685-be0a-1598575fa39e",
       "input": [],
       "output": []
     }
