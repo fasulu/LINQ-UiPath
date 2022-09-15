@@ -1,0 +1,112 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Let_Linq" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="866,759" sap2010:WorkflowViewState.IdRef="Let_Linq_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="28">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="19">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Let_Linq" sap:VirtualizedContainerService.HintSize="518,694" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Name="dtCity" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:BuildDataTable DataTable="[dtCity]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="476,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;City&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Country&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Postcode&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Active&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Population&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Date&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;City&gt;Paris&lt;/City&gt;&#xA;    &lt;Country&gt;France&lt;/Country&gt;&#xA;    &lt;Postcode&gt;75005&lt;/Postcode&gt;&#xA;    &lt;Active&gt;Yes&lt;/Active&gt;&#xA;    &lt;Population&gt;550000&lt;/Population&gt;&#xA;    &lt;Date&gt;01/11/1410&lt;/Date&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;City&gt;Frankfurt&lt;/City&gt;&#xA;    &lt;Country&gt;Germany&lt;/Country&gt;&#xA;    &lt;Postcode&gt;60306&lt;/Postcode&gt;&#xA;    &lt;Active&gt;Yes&lt;/Active&gt;&#xA;    &lt;Population&gt;150000&lt;/Population&gt;&#xA;    &lt;Date&gt;02/12/1320&lt;/Date&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;City&gt;Toulouse&lt;/City&gt;&#xA;    &lt;Country&gt;France&lt;/Country&gt;&#xA;    &lt;Postcode&gt;31004&lt;/Postcode&gt;&#xA;    &lt;Active&gt;No&lt;/Active&gt;&#xA;    &lt;Population&gt;50000&lt;/Population&gt;&#xA;    &lt;Date&gt;03/13/1830&lt;/Date&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;City&gt;London&lt;/City&gt;&#xA;    &lt;Country&gt;UK&lt;/Country&gt;&#xA;    &lt;Postcode&gt;SW7 3LQ&lt;/Postcode&gt;&#xA;    &lt;Active&gt;1&lt;/Active&gt;&#xA;    &lt;Population&gt;650000&lt;/Population&gt;&#xA;    &lt;Date&gt;04/14/1240&lt;/Date&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;City&gt;Berlin&lt;/City&gt;&#xA;    &lt;Country&gt;Germany&lt;/Country&gt;&#xA;    &lt;Postcode&gt;10115&lt;/Postcode&gt;&#xA;    &lt;Active&gt;2&lt;/Active&gt;&#xA;    &lt;Population&gt;30000&lt;/Population&gt;&#xA;    &lt;Date&gt;05/15/1150&lt;/Date&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;City&gt;New York&lt;/City&gt;&#xA;    &lt;Country&gt;USA&lt;/Country&gt;&#xA;    &lt;Postcode&gt;10017&lt;/Postcode&gt;&#xA;    &lt;Active&gt;Yes&lt;/Active&gt;&#xA;    &lt;Population&gt;850000&lt;/Population&gt;&#xA;    &lt;Date&gt;06/16/1860&lt;/Date&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;City&gt;Bristol&lt;/City&gt;&#xA;    &lt;Country&gt;UK&lt;/Country&gt;&#xA;    &lt;Postcode&gt;BS1 1NA&lt;/Postcode&gt;&#xA;    &lt;Active&gt;3&lt;/Active&gt;&#xA;    &lt;Population&gt;40000&lt;/Population&gt;&#xA;    &lt;Date&gt;07/17/1870&lt;/Date&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;City&gt;Munich&lt;/City&gt;&#xA;    &lt;Country&gt;Germany&lt;/Country&gt;&#xA;    &lt;Postcode&gt;80335&lt;/Postcode&gt;&#xA;    &lt;Active&gt;Yes&lt;/Active&gt;&#xA;    &lt;Population&gt;50000&lt;/Population&gt;&#xA;    &lt;Date&gt;08/18/1180&lt;/Date&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;City&gt;Washington&lt;/City&gt;&#xA;    &lt;Country&gt;USA&lt;/Country&gt;&#xA;    &lt;Postcode&gt;98001&lt;/Postcode&gt;&#xA;    &lt;Active&gt;No&lt;/Active&gt;&#xA;    &lt;Population&gt;150000&lt;/Population&gt;&#xA;    &lt;Date&gt;09/19/1890&lt;/Date&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;City&gt;Hamburg&lt;/City&gt;&#xA;    &lt;Country&gt;Germany&lt;/Country&gt;&#xA;    &lt;Postcode&gt;20095&lt;/Postcode&gt;&#xA;    &lt;Active&gt;No&lt;/Active&gt;&#xA;    &lt;Population&gt;40000&lt;/Population&gt;&#xA;    &lt;Date&gt;10/20/1500&lt;/Date&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;City&gt;New Delhi&lt;/City&gt;&#xA;    &lt;Country&gt;India&lt;/Country&gt;&#xA;    &lt;Postcode&gt;110002&lt;/Postcode&gt;&#xA;    &lt;Active&gt;No&lt;/Active&gt;&#xA;    &lt;Population&gt;850000&lt;/Population&gt;&#xA;    &lt;Date&gt;11/21/1510&lt;/Date&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;City&gt;Tokyo&lt;/City&gt;&#xA;    &lt;Country&gt;Japan&lt;/Country&gt;&#xA;    &lt;Postcode&gt;100-0001&lt;/Postcode&gt;&#xA;    &lt;Active&gt;4&lt;/Active&gt;&#xA;    &lt;Population&gt;1250000&lt;/Population&gt;&#xA;    &lt;Date&gt;12/22/1520&lt;/Date&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;City&gt;Chennai&lt;/City&gt;&#xA;    &lt;Country&gt;India&lt;/Country&gt;&#xA;    &lt;Postcode&gt;600001&lt;/Postcode&gt;&#xA;    &lt;Active&gt;5&lt;/Active&gt;&#xA;    &lt;Population&gt;880000&lt;/Population&gt;&#xA;    &lt;Date&gt;01/23/1530&lt;/Date&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;City&gt;Osaka&lt;/City&gt;&#xA;    &lt;Country&gt;Japan&lt;/Country&gt;&#xA;    &lt;Postcode&gt;530-0002&lt;/Postcode&gt;&#xA;    &lt;Active&gt;Yes&lt;/Active&gt;&#xA;    &lt;Population&gt;1350000&lt;/Population&gt;&#xA;    &lt;Date&gt;02/24/1850&lt;/Date&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;City&gt;Sydney&lt;/City&gt;&#xA;    &lt;Country&gt;Australia&lt;/Country&gt;&#xA;    &lt;Postcode&gt;2015&lt;/Postcode&gt;&#xA;    &lt;Active&gt;Yes&lt;/Active&gt;&#xA;    &lt;Population&gt;250000&lt;/Population&gt;&#xA;    &lt;Date&gt;03/25/1810&lt;/Date&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;City&gt;Texas&lt;/City&gt;&#xA;    &lt;Country&gt;USA&lt;/Country&gt;&#xA;    &lt;Postcode&gt;75106&lt;/Postcode&gt;&#xA;    &lt;Active&gt;Yes&lt;/Active&gt;&#xA;    &lt;Population&gt;150000&lt;/Population&gt;&#xA;    &lt;Date&gt;04/26/1744&lt;/Date&gt;&#xA;  &lt;/TableName&gt;&#xA;&lt;/NewDataSet&gt;" />
+    <Sequence sap:VirtualizedContainerService.HintSize="476,503" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="s:Int32[]" Name="arrInput">
+          <Variable.Default>
+            <mva:VisualBasicValue x:TypeArguments="s:Int32[]" ExpressionText="{}{1,2,3,4,5,6,7,8,9,10}" />
+          </Variable.Default>
+        </Variable>
+        <Variable x:TypeArguments="s:Int32[]" Name="arrOutput" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Assign sap:VirtualizedContainerService.HintSize="434,64" sap2010:WorkflowViewState.IdRef="Assign_1">
+        <Assign.To>
+          <OutArgument x:TypeArguments="s:Int32[]">[arrOutput]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="s:Int32[]" xml:space="preserve">[(
+From arr In arrInput
+Let result = arr*2
+Select result
+).ToArray]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <ui:ForEach x:TypeArguments="x:Int32" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="434,307" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[arrOutput]">
+        <ui:ForEach.Body>
+          <ActivityAction x:TypeArguments="x:Int32">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Int32" Name="item" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,183" sap2010:WorkflowViewState.IdRef="Sequence_3">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[item.ToString]" />
+            </Sequence>
+          </ActivityAction>
+        </ui:ForEach.Body>
+      </ui:ForEach>
+    </Sequence>
+  </Sequence>
+</Activity>
