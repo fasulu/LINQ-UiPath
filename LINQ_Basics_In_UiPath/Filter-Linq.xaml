@@ -1,0 +1,506 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Filter_Linq" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="720,1061" sap2010:WorkflowViewState.IdRef="Filter_Linq_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="29">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="19">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Filter_Linq" sap:VirtualizedContainerService.HintSize="518,1432" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Name="dtOutput1" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dtInput1" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dtInput2" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dtOutput2" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:BuildDataTable DataTable="[dtInput1]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="476,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;City&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xD;&#xA;                  &lt;xs:simpleType&gt;&#xD;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xD;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xD;&#xA;                    &lt;/xs:restriction&gt;&#xD;&#xA;                  &lt;/xs:simpleType&gt;&#xD;&#xA;                &lt;/xs:element&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Country&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Postcode&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;City&gt;Paris&lt;/City&gt;&#xD;&#xA;    &lt;Country&gt;France&lt;/Country&gt;&#xD;&#xA;    &lt;Postcode&gt;75005&lt;/Postcode&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;City&gt;Frankfurt&lt;/City&gt;&#xD;&#xA;    &lt;Country&gt;Germany&lt;/Country&gt;&#xD;&#xA;    &lt;Postcode&gt;60306&lt;/Postcode&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;City&gt;Toulouse&lt;/City&gt;&#xD;&#xA;    &lt;Country&gt;France&lt;/Country&gt;&#xD;&#xA;    &lt;Postcode&gt;31004&lt;/Postcode&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;City&gt;London&lt;/City&gt;&#xD;&#xA;    &lt;Country&gt;UK&lt;/Country&gt;&#xD;&#xA;    &lt;Postcode&gt;SW7 3LQ&lt;/Postcode&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;City&gt;Berlin&lt;/City&gt;&#xD;&#xA;    &lt;Country&gt;Germany&lt;/Country&gt;&#xD;&#xA;    &lt;Postcode&gt;10115&lt;/Postcode&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;City&gt;New York&lt;/City&gt;&#xD;&#xA;    &lt;Country&gt;USA&lt;/Country&gt;&#xD;&#xA;    &lt;Postcode&gt;10017&lt;/Postcode&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;City&gt;Bristol&lt;/City&gt;&#xD;&#xA;    &lt;Country&gt;UK&lt;/Country&gt;&#xD;&#xA;    &lt;Postcode&gt;BS1 1NA&lt;/Postcode&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;City&gt;Munich&lt;/City&gt;&#xD;&#xA;    &lt;Country&gt;Germany&lt;/Country&gt;&#xD;&#xA;    &lt;Postcode&gt;80335&lt;/Postcode&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;City&gt;Washington&lt;/City&gt;&#xD;&#xA;    &lt;Country&gt;USA&lt;/Country&gt;&#xD;&#xA;    &lt;Postcode&gt;98001&lt;/Postcode&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;City&gt;Hamburg&lt;/City&gt;&#xD;&#xA;    &lt;Country&gt;Germany&lt;/Country&gt;&#xD;&#xA;    &lt;Postcode&gt;20095&lt;/Postcode&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;City&gt;New Delhi&lt;/City&gt;&#xD;&#xA;    &lt;Country&gt;India&lt;/Country&gt;&#xD;&#xA;    &lt;Postcode&gt;110002&lt;/Postcode&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;City&gt;Tokyo&lt;/City&gt;&#xD;&#xA;    &lt;Country&gt;Japan&lt;/Country&gt;&#xD;&#xA;    &lt;Postcode&gt;100-0001&lt;/Postcode&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;City&gt;Chennai&lt;/City&gt;&#xD;&#xA;    &lt;Country&gt;India&lt;/Country&gt;&#xD;&#xA;    &lt;Postcode&gt;600001&lt;/Postcode&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;City&gt;Osaka&lt;/City&gt;&#xD;&#xA;    &lt;Country&gt;Japan&lt;/Country&gt;&#xD;&#xA;    &lt;Postcode&gt;530-0002&lt;/Postcode&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;City&gt;Sydney&lt;/City&gt;&#xD;&#xA;    &lt;Country&gt;Australia&lt;/Country&gt;&#xD;&#xA;    &lt;Postcode&gt;2015&lt;/Postcode&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;City&gt;Texas&lt;/City&gt;&#xD;&#xA;    &lt;Country&gt;USA&lt;/Country&gt;&#xD;&#xA;    &lt;Postcode&gt;75106&lt;/Postcode&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;City&gt;Calais&lt;/City&gt;&#xD;&#xA;    &lt;Country&gt;France&lt;/Country&gt;&#xD;&#xA;    &lt;Postcode&gt;62100&lt;/Postcode&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;Country&gt;France&lt;/Country&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;Postcode&gt;70121&lt;/Postcode&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;City&gt;Kampala&lt;/City&gt;&#xD;&#xA;    &lt;Country&gt;Uganda&lt;/Country&gt;&#xD;&#xA;    &lt;Postcode&gt;10102&lt;/Postcode&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName /&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;City&gt;Mumbai&lt;/City&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName /&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;City&gt;California&lt;/City&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;Country&gt;Belgium&lt;/Country&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;City&gt;Nikumba&lt;/City&gt;&#xD;&#xA;    &lt;Country&gt;Uganda&lt;/Country&gt;&#xD;&#xA;    &lt;Postcode&gt;31207&lt;/Postcode&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
+    <ui:BuildDataTable DataTable="[dtInput2]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="476,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;City&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xD;&#xA;                  &lt;xs:simpleType&gt;&#xD;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xD;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xD;&#xA;                    &lt;/xs:restriction&gt;&#xD;&#xA;                  &lt;/xs:simpleType&gt;&#xD;&#xA;                &lt;/xs:element&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Country&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Postcode&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Active&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Population&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Date&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;City&gt;Paris&lt;/City&gt;&#xD;&#xA;    &lt;Country&gt;France&lt;/Country&gt;&#xD;&#xA;    &lt;Postcode&gt;75005&lt;/Postcode&gt;&#xD;&#xA;    &lt;Active&gt;Yes&lt;/Active&gt;&#xD;&#xA;    &lt;Population&gt;550000&lt;/Population&gt;&#xD;&#xA;    &lt;Date&gt;01/11/1410&lt;/Date&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;City&gt;Frankfurt&lt;/City&gt;&#xD;&#xA;    &lt;Country&gt;Germany&lt;/Country&gt;&#xD;&#xA;    &lt;Postcode&gt;60306&lt;/Postcode&gt;&#xD;&#xA;    &lt;Active&gt;Yes&lt;/Active&gt;&#xD;&#xA;    &lt;Population&gt;150000&lt;/Population&gt;&#xD;&#xA;    &lt;Date&gt;02/12/1320&lt;/Date&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;City&gt;Toulouse&lt;/City&gt;&#xD;&#xA;    &lt;Country&gt;France&lt;/Country&gt;&#xD;&#xA;    &lt;Postcode&gt;31004&lt;/Postcode&gt;&#xD;&#xA;    &lt;Active&gt;No&lt;/Active&gt;&#xD;&#xA;    &lt;Population&gt;50000&lt;/Population&gt;&#xD;&#xA;    &lt;Date&gt;03/13/1830&lt;/Date&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;City&gt;London&lt;/City&gt;&#xD;&#xA;    &lt;Country&gt;UK&lt;/Country&gt;&#xD;&#xA;    &lt;Postcode&gt;SW7 3LQ&lt;/Postcode&gt;&#xD;&#xA;    &lt;Active&gt;1&lt;/Active&gt;&#xD;&#xA;    &lt;Population&gt;650000&lt;/Population&gt;&#xD;&#xA;    &lt;Date&gt;04/14/1240&lt;/Date&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;City&gt;Berlin&lt;/City&gt;&#xD;&#xA;    &lt;Country&gt;Germany&lt;/Country&gt;&#xD;&#xA;    &lt;Postcode&gt;10115&lt;/Postcode&gt;&#xD;&#xA;    &lt;Active&gt;2&lt;/Active&gt;&#xD;&#xA;    &lt;Population&gt;30000&lt;/Population&gt;&#xD;&#xA;    &lt;Date&gt;05/15/1150&lt;/Date&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;City&gt;New York&lt;/City&gt;&#xD;&#xA;    &lt;Country&gt;USA&lt;/Country&gt;&#xD;&#xA;    &lt;Postcode&gt;10017&lt;/Postcode&gt;&#xD;&#xA;    &lt;Active&gt;Yes&lt;/Active&gt;&#xD;&#xA;    &lt;Population&gt;850000&lt;/Population&gt;&#xD;&#xA;    &lt;Date&gt;06/16/1860&lt;/Date&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;City&gt;Bristol&lt;/City&gt;&#xD;&#xA;    &lt;Country&gt;UK&lt;/Country&gt;&#xD;&#xA;    &lt;Postcode&gt;BS1 1NA&lt;/Postcode&gt;&#xD;&#xA;    &lt;Active&gt;3&lt;/Active&gt;&#xD;&#xA;    &lt;Population&gt;40000&lt;/Population&gt;&#xD;&#xA;    &lt;Date&gt;07/17/1870&lt;/Date&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;City&gt;Munich&lt;/City&gt;&#xD;&#xA;    &lt;Country&gt;Germany&lt;/Country&gt;&#xD;&#xA;    &lt;Postcode&gt;80335&lt;/Postcode&gt;&#xD;&#xA;    &lt;Active&gt;Yes&lt;/Active&gt;&#xD;&#xA;    &lt;Population&gt;50000&lt;/Population&gt;&#xD;&#xA;    &lt;Date&gt;08/18/1180&lt;/Date&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;City&gt;Washington&lt;/City&gt;&#xD;&#xA;    &lt;Country&gt;USA&lt;/Country&gt;&#xD;&#xA;    &lt;Postcode&gt;98001&lt;/Postcode&gt;&#xD;&#xA;    &lt;Active&gt;No&lt;/Active&gt;&#xD;&#xA;    &lt;Population&gt;150000&lt;/Population&gt;&#xD;&#xA;    &lt;Date&gt;09/19/1890&lt;/Date&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;City&gt;Hamburg&lt;/City&gt;&#xD;&#xA;    &lt;Country&gt;Germany&lt;/Country&gt;&#xD;&#xA;    &lt;Postcode&gt;20095&lt;/Postcode&gt;&#xD;&#xA;    &lt;Active&gt;No&lt;/Active&gt;&#xD;&#xA;    &lt;Population&gt;40000&lt;/Population&gt;&#xD;&#xA;    &lt;Date&gt;10/20/1500&lt;/Date&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;City&gt;New Delhi&lt;/City&gt;&#xD;&#xA;    &lt;Country&gt;India&lt;/Country&gt;&#xD;&#xA;    &lt;Postcode&gt;110002&lt;/Postcode&gt;&#xD;&#xA;    &lt;Active&gt;No&lt;/Active&gt;&#xD;&#xA;    &lt;Population&gt;850000&lt;/Population&gt;&#xD;&#xA;    &lt;Date&gt;11/21/1510&lt;/Date&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;City&gt;Tokyo&lt;/City&gt;&#xD;&#xA;    &lt;Country&gt;Japan&lt;/Country&gt;&#xD;&#xA;    &lt;Postcode&gt;100-0001&lt;/Postcode&gt;&#xD;&#xA;    &lt;Active&gt;4&lt;/Active&gt;&#xD;&#xA;    &lt;Population&gt;1250000&lt;/Population&gt;&#xD;&#xA;    &lt;Date&gt;12/22/1520&lt;/Date&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;City&gt;Chennai&lt;/City&gt;&#xD;&#xA;    &lt;Country&gt;India&lt;/Country&gt;&#xD;&#xA;    &lt;Postcode&gt;600001&lt;/Postcode&gt;&#xD;&#xA;    &lt;Active&gt;5&lt;/Active&gt;&#xD;&#xA;    &lt;Population&gt;880000&lt;/Population&gt;&#xD;&#xA;    &lt;Date&gt;01/23/1530&lt;/Date&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;City&gt;Osaka&lt;/City&gt;&#xD;&#xA;    &lt;Country&gt;Japan&lt;/Country&gt;&#xD;&#xA;    &lt;Postcode&gt;530-0002&lt;/Postcode&gt;&#xD;&#xA;    &lt;Active&gt;Yes&lt;/Active&gt;&#xD;&#xA;    &lt;Population&gt;1350000&lt;/Population&gt;&#xD;&#xA;    &lt;Date&gt;02/24/1850&lt;/Date&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;City&gt;Sydney&lt;/City&gt;&#xD;&#xA;    &lt;Country&gt;Australia&lt;/Country&gt;&#xD;&#xA;    &lt;Postcode&gt;2015&lt;/Postcode&gt;&#xD;&#xA;    &lt;Active&gt;Yes&lt;/Active&gt;&#xD;&#xA;    &lt;Population&gt;250000&lt;/Population&gt;&#xD;&#xA;    &lt;Date&gt;03/25/1810&lt;/Date&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;City&gt;Texas&lt;/City&gt;&#xD;&#xA;    &lt;Country&gt;USA&lt;/Country&gt;&#xD;&#xA;    &lt;Postcode&gt;75106&lt;/Postcode&gt;&#xD;&#xA;    &lt;Active&gt;Yes&lt;/Active&gt;&#xD;&#xA;    &lt;Population&gt;150000&lt;/Population&gt;&#xD;&#xA;    &lt;Date&gt;04/26/1744&lt;/Date&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="476,51" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="368,158" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Sequence DisplayName="Sequence - Filter by Name" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="strDtOutput" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign sap2010:Annotation.AnnotationText="&#xD;&#xA;This query can also done by;&#xD;&#xA;***(&#xD;&#xA; From row In dtInput&#xD;&#xA; Where row(&quot;Country&quot;).toString.Trim = &quot;France&quot;&#xD;&#xA; Select row&#xD;&#xA;).CopyToDataTable&#xD;&#xA;***(&#xD;&#xA;From row In dtInput&#xD;&#xA;Where Not row(&quot;Country&quot;).ToString = &quot;France&quot;&#xD;&#xA;Select row&#xD;&#xA;).CopyToDataTable&#xD;&#xA;&#xD;&#xA;But use 'Contains()' to filter character/word contains in the specific column.&#xD;&#xA;" sap:VirtualizedContainerService.HintSize="284,346" sap2010:WorkflowViewState.IdRef="Assign_1">
+              <Assign.To>
+                <OutArgument x:TypeArguments="sd:DataTable">[dtOutput1]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="sd:DataTable" xml:space="preserve">[(
+	From row In dtInput1
+	Where row("Country").toString.Trim.Contains("France")
+	Select row
+).CopyToDataTable]</InArgument>
+              </Assign.Value>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </Assign>
+            <ui:OutputDataTable DataTable="[dtOutput1]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="284,79" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[strDtOutput]" />
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="284,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[strDtOutput.ToString]" />
+          </Sequence>
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="476,51" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="368,707" sap2010:WorkflowViewState.IdRef="Sequence_7">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Sequence DisplayName="Sequence - Filter by Name" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="strDtOutput" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign sap2010:Annotation.AnnotationText="&#xA;Multiple filter&#xD;&#xA;(&#xD;&#xA; From row In dtInput&#xD;&#xA; Where row(&quot;Country&quot;).toString.Contains(&quot;Germany&quot;) Or row(&quot;Country&quot;).toString.Contains(&quot;USA&quot;)&#xD;&#xA; Select row&#xD;&#xA;).CopyToDataTable&#xD;&#xA;&#xA;But use 'Contains()' to filter character/word contains in the specific column.&#xA;" sap:VirtualizedContainerService.HintSize="284,271" sap2010:WorkflowViewState.IdRef="Assign_3">
+              <Assign.To>
+                <OutArgument x:TypeArguments="sd:DataTable">[dtOutput1]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="sd:DataTable" xml:space="preserve">[(
+	From row In dtInput1
+	Where row("Country").toString.Contains("Germany") And row("City").toString.Contains("Berlin")
+	Select row
+).CopyToDataTable]</InArgument>
+              </Assign.Value>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </Assign>
+            <ui:OutputDataTable DataTable="[dtOutput1]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="284,79" sap2010:WorkflowViewState.IdRef="OutputDataTable_3" Text="[strDtOutput]" />
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="284,61" sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="[strDtOutput.ToString]" />
+          </Sequence>
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="476,51" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="368,677" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Sequence DisplayName="Sequence - Filter by Name IsNullOrEmpty" sap:VirtualizedContainerService.HintSize="213,66" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="strDtOutput" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign sap2010:Annotation.AnnotationText="&#xA;This query can also done by;&#xA;(&#xA; From row In dtInput&#xA; Where row(&quot;Country&quot;).toString.Trim = &quot;France&quot;&#xA; Select row&#xA;).CopyToDataTable&#xA;But use 'Contains()' to filter character/word contains in the specific column.&#xA;" sap:VirtualizedContainerService.HintSize="284,241" sap2010:WorkflowViewState.IdRef="Assign_2">
+              <Assign.To>
+                <OutArgument x:TypeArguments="sd:DataTable">[dtOutput1]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="sd:DataTable" xml:space="preserve">[(
+From row In dtInput1
+Where Not  row("Country").ToString = ""
+Select row
+).CopyToDataTable]</InArgument>
+              </Assign.Value>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </Assign>
+            <ui:OutputDataTable DataTable="[dtOutput1]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="284,79" sap2010:WorkflowViewState.IdRef="OutputDataTable_2" Text="[strDtOutput]" />
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="284,61" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[strDtOutput.ToString]" />
+          </Sequence>
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="476,51" sap2010:WorkflowViewState.IdRef="CommentOut_4">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="242,158" sap2010:WorkflowViewState.IdRef="Sequence_9">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Sequence DisplayName="Sequence - Remove empty rows from the table" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_8">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="strDtOutput" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign sap2010:Annotation.AnnotationText="&#xA;This query will remove empty rows in the data table.&#xA;" sap:VirtualizedContainerService.HintSize="284,136" sap2010:WorkflowViewState.IdRef="Assign_4">
+              <Assign.To>
+                <OutArgument x:TypeArguments="sd:DataTable">[dtOutput1]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="sd:DataTable" xml:space="preserve">[(
+From row In dtInput1
+From col In dtInput1.Columns.Cast(Of DataColumn)
+Where Not row(col).ToString.Trim = ""
+Select row
+).Distinct.CopyToDataTable]</InArgument>
+              </Assign.Value>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </Assign>
+            <ui:OutputDataTable DataTable="[dtOutput1]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="284,79" sap2010:WorkflowViewState.IdRef="OutputDataTable_4" Text="[strDtOutput]" />
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="284,61" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="[strDtOutput.ToString]" />
+          </Sequence>
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="476,51" sap2010:WorkflowViewState.IdRef="CommentOut_7">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="242,158" sap2010:WorkflowViewState.IdRef="Sequence_14">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Sequence DisplayName="Sequence - Filter numeric content in a column from the table" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_10">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="strDtOutput" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign sap2010:Annotation.AnnotationText="&#xA;This query will Filter numeric content in a column(Active) from the data table&#xA;" sap:VirtualizedContainerService.HintSize="284,136" sap2010:WorkflowViewState.IdRef="Assign_5">
+              <Assign.To>
+                <OutArgument x:TypeArguments="sd:DataTable">[dtOutput2]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="sd:DataTable" xml:space="preserve">[(
+From row In dtInput2
+Where CStr(row("Active")).ToString.IsNumeric
+Select row
+).CopyToDataTable]</InArgument>
+              </Assign.Value>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </Assign>
+            <ui:OutputDataTable DataTable="[dtOutput2]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="284,79" sap2010:WorkflowViewState.IdRef="OutputDataTable_5" Text="[strDtOutput]" />
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="284,61" sap2010:WorkflowViewState.IdRef="WriteLine_5" Text="[strDtOutput.ToString]" />
+          </Sequence>
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="476,51" sap2010:WorkflowViewState.IdRef="CommentOut_8">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="242,158" sap2010:WorkflowViewState.IdRef="Sequence_15">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Sequence DisplayName="Sequence - Filter content by date" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_12">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="strDtOutput" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign sap2010:Annotation.AnnotationText="&#xA;This query will Filter content in a column by date from the data table&#xA;" sap:VirtualizedContainerService.HintSize="284,136" sap2010:WorkflowViewState.IdRef="Assign_6">
+              <Assign.To>
+                <OutArgument x:TypeArguments="sd:DataTable">[dtOutput2]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="sd:DataTable" xml:space="preserve">[(
+From row In dtInput2
+Where CDate(row("Date").ToString) &lt; CDate("01/12/1850")
+Select row
+).CopyToDataTable]</InArgument>
+              </Assign.Value>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </Assign>
+            <ui:OutputDataTable DataTable="[dtOutput2]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="284,79" sap2010:WorkflowViewState.IdRef="OutputDataTable_6" Text="[strDtOutput]" />
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="284,61" sap2010:WorkflowViewState.IdRef="WriteLine_6" Text="[strDtOutput.ToString]" />
+          </Sequence>
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="476,51" sap2010:WorkflowViewState.IdRef="CommentOut_9">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="346,571" sap2010:WorkflowViewState.IdRef="Sequence_17">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Sequence DisplayName="Sequence - Sum values in a selected column" sap:VirtualizedContainerService.HintSize="304,479" sap2010:WorkflowViewState.IdRef="Sequence_16">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="strDtOutput" />
+              <Variable x:TypeArguments="x:Int32" Name="intTotalPopulation" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign sap2010:Annotation.AnnotationText="&#xA;This query will Sum selected columns where the condition meets.&#xD;&#xA;Can also be done replacing 'Equals' into '='.&#xD;&#xA;&#xD;&#xA;(&#xD;&#xA;From row In dtInput2&#xD;&#xA;Where row(&quot;Country&quot;).ToString.Equals(&quot;France&quot;)&#xD;&#xA;Select row&#xD;&#xA;).Sum(Function(x) CInt(x(&quot;Population&quot;).ToString))&#xA;" sap:VirtualizedContainerService.HintSize="262,286" sap2010:WorkflowViewState.IdRef="Assign_7">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Int32">[intTotalPopulation]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Int32" xml:space="preserve">[(
+From row In dtInput2
+Where row("Country").ToString.Equals("Germany")
+Select row
+).Sum(Function(x) CInt(x("Population").ToString))]</InArgument>
+              </Assign.Value>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </Assign>
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="262,61" sap2010:WorkflowViewState.IdRef="WriteLine_7" Text="[&quot;Total population is &quot; + intTotalPopulation.ToString]" />
+          </Sequence>
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="476,51" sap2010:WorkflowViewState.IdRef="CommentOut_10">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="242,158" sap2010:WorkflowViewState.IdRef="Sequence_19">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Sequence DisplayName="Sequence - Average values in a selected column" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_18">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="strDtOutput" />
+              <Variable x:TypeArguments="x:Double" Name="dblAvgPopulation" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign sap2010:Annotation.AnnotationText="&#xA;This query will calculate average of selected columns where the condition meets.&#xA;&#xA;" sap:VirtualizedContainerService.HintSize="262,166" sap2010:WorkflowViewState.IdRef="Assign_8">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Double">[dblAvgPopulation]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Double" xml:space="preserve">[(
+From row In dtInput2
+Where row("Country").ToString.Equals("Germany")
+Select row
+).Average(Function(x) CDbl(x("Population").ToString))]</InArgument>
+              </Assign.Value>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </Assign>
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="262,61" sap2010:WorkflowViewState.IdRef="WriteLine_8" Text="[&quot;Cties average population is &quot; + dblAvgPopulation.ToString]" />
+          </Sequence>
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
+    <Sequence DisplayName="Sequence - Try catch in Linq" sap:VirtualizedContainerService.HintSize="476,414" sap2010:WorkflowViewState.IdRef="Sequence_20">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:Double" Name="dblAvgPopulation" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="434,322" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+        <TryCatch.Try>
+          <Sequence sap:VirtualizedContainerService.HintSize="304,359" sap2010:WorkflowViewState.IdRef="Sequence_21">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign sap2010:Annotation.AnnotationText="&#xA;This query will calculate average of selected columns where the condition meets.&#xA;&#xA;" sap:VirtualizedContainerService.HintSize="262,166" sap2010:WorkflowViewState.IdRef="Assign_9">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Double">[dblAvgPopulation]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Double" xml:space="preserve">[(
+From row In dtInput2
+Where row("Country").ToString.Equals("Brazil")
+Select row
+).Average(Function(x) CDbl(x("Population").ToString))]</InArgument>
+              </Assign.Value>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </Assign>
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="262,61" sap2010:WorkflowViewState.IdRef="WriteLine_9" Text="[&quot;Cties average population is &quot; + dblAvgPopulation.ToString]" />
+          </Sequence>
+        </TryCatch.Try>
+        <TryCatch.Catches>
+          <Catch x:TypeArguments="s:InvalidOperationException" sap:VirtualizedContainerService.HintSize="400,160" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ActivityAction x:TypeArguments="s:InvalidOperationException">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="s:InvalidOperationException" Name="exception" />
+              </ActivityAction.Argument>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Requested Item not found.&quot; +Environment.NewLine+ exception.Message.ToString()]" />
+            </ActivityAction>
+          </Catch>
+        </TryCatch.Catches>
+      </TryCatch>
+    </Sequence>
+  </Sequence>
+</Activity>
