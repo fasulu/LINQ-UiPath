@@ -8513,9 +8513,9 @@
     "restore": {
       "projectUniqueName": "LINQ_Basics_In_UiPath",
       "projectName": "LINQ_Basics_In_UiPath",
-      "projectPath": "C:\\Users\\fasulu\\Documents\\UiPath\\LINQ-UiPath\\LINQ_Basics_In_UiPath\\.local",
+      "projectPath": "C:\\Users\\fasulu\\Documents\\UiPath\\UiPath-LINQ\\LINQ_Basics_In_UiPath\\.local",
       "packagesPath": "C:\\Users\\fasulu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\fasulu\\Documents\\UiPath\\LINQ-UiPath\\LINQ_Basics_In_UiPath\\.local",
+      "outputPath": "C:\\Users\\fasulu\\Documents\\UiPath\\UiPath-LINQ\\LINQ_Basics_In_UiPath\\.local",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ]

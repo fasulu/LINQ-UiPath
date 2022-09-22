@@ -1,6 +1,6 @@
 {
   "name": "LINQ_Basics_In_UiPath",
-  "description": "LINQ tutorial on Extract values from xml document.\r\nConverting extracted value to an input dialog combo box, Group, Order, Join, Filter, Sum, Average",
+  "description": "LINQ tutorial on Extract values from xml document.\r\nConverting extracted value to an input dialog combo box, Group, Order, Join, Filter, Sum, Average, Let",
   "main": "Let-Linq.xaml",
   "dependencies": {
     "System.Xml.XDocument": "[4.3.0]",

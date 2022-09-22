@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Ly8ooof3Ud/7BgUh0KHI8jngc/qDWcq8u5akiIR86jxOAhpdbHtEESlirsvuBXbP7F0mhI9xvRvDdF+llp9giA==",
+  "dgSpecHash": "QAvwfO+MA+0YP0vE8gexd1IiYhbbmU19rgTjIMPQ9H/kHYD0KeoE/eFJcE93bVLphveunlLyVry50AM+lPA1XQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\fasulu\\Documents\\UiPath\\LINQ-UiPath\\LINQ_Basics_In_UiPath\\.local\\",
+  "projectFilePath": "C:\\Users\\fasulu\\Documents\\UiPath\\UiPath-LINQ\\LINQ_Basics_In_UiPath\\.local\\",
   "expectedPackageFiles": [
     "C:\\Users\\fasulu\\.nuget\\packages\\closedxml\\0.87.1\\closedxml.0.87.1.nupkg.sha512",
     "C:\\Users\\fasulu\\.nuget\\packages\\csvhelper\\16.0.0\\csvhelper.16.0.0.nupkg.sha512",
