@@ -1,7 +1,7 @@
 {
   "name": "LINQ_Basics_In_UiPath",
-  "description": "LINQ tutorial on Extract values from xml document.\r\nConverting extracted value to an input dialog combo box, Group, Order, Join, Filter, Sum, Average, Let",
-  "main": "Let-Linq.xaml",
+  "description": "LINQ tutorial on Extract values from xml document.\r\nConverting extracted value to an input dialog combo box, Group, Order, Join, Filter, Sum, Average, Let, Cast",
+  "main": "Cast-Linq.xaml",
   "dependencies": {
     "System.Xml.XDocument": "[4.3.0]",
     "UiPath.Excel.Activities": "[2.12.3]",
@@ -15,6 +15,7 @@
   "studioVersion": "22.4.3.0",
   "projectVersion": "1.0.0",
   "runtimeOptions": {
+    "exceptionHandlerWorkflow": "GlobalHandler.xaml",
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
     "isPausable": true,
@@ -78,6 +79,12 @@
     {
       "filePath": "Let-Linq.xaml",
       "uniqueId": "6d8af41e-ab8b-4ffb-90cb-04a363e7aec6",
+      "input": [],
+      "output": []
+    },
+    {
+      "filePath": "Cast-Linq.xaml",
+      "uniqueId": "3757cef6-d8f9-4424-bca7-cfef8f26ac28",
       "input": [],
       "output": []
     }
