@@ -1,7 +1,7 @@
 {
   "name": "LINQ_Basics_In_UiPath",
   "description": "LINQ tutorial on Extract values from xml document.\r\nConverting extracted value to an input dialog combo box, Group, Order, Join, Filter, Sum, Average, Let, Cast,Take",
-  "main": "Take-Linq.xaml",
+  "main": "First-Linq.xaml",
   "dependencies": {
     "System.Xml.XDocument": "[4.3.0]",
     "UiPath.Excel.Activities": "[2.12.3]",
@@ -91,6 +91,12 @@
     {
       "filePath": "Take-Linq.xaml",
       "uniqueId": "59048b91-38dc-4c24-9552-31722768c822",
+      "input": [],
+      "output": []
+    },
+    {
+      "filePath": "First-Linq.xaml",
+      "uniqueId": "f12da4d8-9656-48a2-8ea0-5013134007b6",
       "input": [],
       "output": []
     }
